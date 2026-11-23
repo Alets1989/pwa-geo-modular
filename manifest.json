@@ -1,0 +1,12 @@
+{
+  "id": "./",
+  "name": "GeoCerca - Compartir ubicación",
+  "short_name": "GeoCerca",
+  "description": "Adjunta tu ubicación de forma segura o selecciona una zona manualmente.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f7f5",
+  "theme_color": "#123c35",
+  "lang": "es"
+}

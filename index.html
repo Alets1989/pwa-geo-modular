@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123c35">
+    <meta name="description" content="Adjunta tu ubicación de forma segura o selecciona una zona manualmente.">
+    <title>Compartir ubicación</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./geo-helper.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="Inicio">
+          <span class="brand-mark" aria-hidden="true">+</span>
+          <span>Geo<span class="brand-light">Cerca</span></span>
+        </a>
+        <span class="privacy-note"><span aria-hidden="true">●</span> Tu ubicación es privada</span>
+      </header>
+
+      <section class="location-card" aria-labelledby="page-title">
+        <div class="eyebrow"><span aria-hidden="true">⌖</span> UBICACIÓN PARA TU REPORTE</div>
+        <h1 id="page-title">¿Dónde necesitas ayuda?</h1>
+        <p class="intro">Comparte tu ubicación para que podamos orientarte mejor. Tú decides cómo hacerlo.</p>
+
+        <button class="button button-primary" id="attach-location" type="button">
+          <span aria-hidden="true">⌖</span>
+          Adjuntar mi ubicación
+        </button>
+
+        <section class="notice-card" id="permission-explanation" hidden aria-labelledby="permission-title">
+          <div class="notice-icon" aria-hidden="true">i</div>
+          <div class="notice-content">
+            <h2 id="permission-title">¿Por qué necesitamos tu ubicación?</h2>
+            <p>Usaremos tu ubicación actual para incluirla en este reporte y ayudarte a encontrar asistencia cercana. No se compartirá hasta que envíes el reporte.</p>
+            <button class="button button-confirm" id="confirm-location" type="button">Permitir y continuar</button>
+          </div>
+        </section>
+
+        <section class="manual-card" id="manual-location" hidden aria-labelledby="manual-title">
+          <div class="manual-heading">
+            <span class="notice-icon" aria-hidden="true">⌖</span>
+            <div>
+              <h2 id="manual-title">Elige tu zona manualmente</h2>
+              <p id="permission-help">Puedes continuar sin compartir las coordenadas de tu dispositivo.</p>
+            </div>
+          </div>
+          <label for="zone-select">Zona</label>
+          <div class="manual-controls">
+            <select id="zone-select">
+              <option value="">Selecciona una zona</option>
+              <option value="Norte">Zona norte</option>
+              <option value="Centro">Zona centro</option>
+              <option value="Sur">Zona sur</option>
+              <option value="Este">Zona este</option>
+              <option value="Oeste">Zona oeste</option>
+            </select>
+            <button class="button button-confirm" id="save-zone" type="button">Usar esta zona</button>
+          </div>
+          <p class="browser-help" id="browser-help" hidden>Para reactivar el permiso, abre los ajustes del sitio desde el icono junto a la dirección del navegador, permite el acceso a la ubicación y vuelve a intentarlo.</p>
+        </section>
+
+        <div class="status-message" id="status-message" role="status" aria-live="polite"></div>
+        <section class="result-card" id="location-result" hidden aria-live="polite" aria-labelledby="result-title">
+          <div class="result-icon" aria-hidden="true">✓</div>
+          <div>
+            <h2 id="result-title">Ubicación adjuntada</h2>
+            <p id="result-details"></p>
+            <span class="accuracy-badge" id="accuracy-label"></span>
+          </div>
+        </section>
+
+        <div class="divider"><span>O selecciona una zona</span></div>
+        <p class="privacy-copy">La ubicación solo se utiliza para este reporte.</p>
+      </section>
+      <footer>Hecho para ayudarte, estés donde estés.</footer>
+    </main>
+  </body>
+</html>
